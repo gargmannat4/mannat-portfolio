@@ -1,0 +1,504 @@
+/* Mannat Garg Portfolio
+   Concepts used: CSS selectors, box model, colours, fonts,
+   Flexbox, Grid, positioning and media queries.
+*/
+
+/* 1. Universal selector and box model */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Main page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #202B5B;
+    background-color: #E5E4E2;
+}
+
+a {
+    color: #202B5B;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 3. Header and navigation */
+.site-header {
+    background-color: #202B5B;
+    color: white;
+    padding: 18px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Flexbox: keeps the name and navigation on one line */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wordmark {
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+
+.wordmark span {
+    color: #B9A9D6;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.site-nav a {
+    color: white;
+    padding: 7px 14px;
+    border-radius: 20px;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    background-color: #B9A9D6;
+    color: #202B5B;
+    text-decoration: none;
+}
+
+/* 4. Main content width */
+.wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 5. Home page hero section — CSS Grid */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 45px;
+    padding: 65px 0;
+}
+
+.kicker,
+.eyebrow {
+    color: #202B5B;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 110px;
+    line-height: 0.95;
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h1 .last {
+    color: #B9A9D6;
+}
+
+.hero-intro {
+    max-width: 560px;
+    color: #505779;
+    font-size: 18px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Profile image */
+.portrait-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.portrait-frame {
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid #B9A9D6;
+    border-radius: 200px 200px 8px 8px;
+    background-color: #E5E4E2;
+    box-shadow: 15px 15px #B9A9D6;
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portrait-note {
+    position: absolute;
+    right: -15px;
+    bottom: 25px;
+    padding: 12px 16px;
+    color: white;
+    background-color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* 6. Intro information row — Flexbox */
+.intro-strip {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid #B9A9D6;
+    border-bottom: 1px solid #B9A9D6;
+    color: #505779;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* 7. Sections and headings */
+.section {
+    padding: 65px 0;
+    border-bottom: 1px solid #B9A9D6;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.profile-band h2,
+.page-title {
+    color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.section-heading p,
+.profile-band p {
+    max-width: 450px;
+    color: #505779;
+}
+
+/* 8. Grid of clickable home page links */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 185px;
+    padding: 22px;
+    background-color: white;
+    border: 1px solid #B9A9D6;
+}
+
+.link-card:hover {
+    background-color: #B9A9D6;
+    text-decoration: none;
+}
+
+.link-card .num {
+    font-size: 11px;
+    color: #505779;
+}
+
+.link-card h3 {
+    color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.link-card p {
+    color: #505779;
+    font-size: 13px;
+}
+
+.arrow {
+    text-align: right;
+    font-size: 22px;
+}
+
+/* 9. About section — Grid */
+.profile-band {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    padding: 65px 0;
+}
+
+/* Leadership roles — Grid */
+.role-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.role {
+    padding: 15px;
+    background-color: #E5E4E2;
+    border-left: 4px solid #B9A9D6;
+}
+
+.role strong {
+    display: block;
+    color: #202B5B;
+}
+
+.role span {
+    color: #505779;
+    font-size: 13px;
+}
+
+/* 10. Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #202B5B;
+    border-radius: 25px;
+    color: #202B5B;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.button.primary {
+    color: white;
+    background-color: #202B5B;
+}
+
+.button:hover {
+    color: #202B5B;
+    background-color: #B9A9D6;
+    text-decoration: none;
+}
+
+/* 11. Projects page */
+.page-intro {
+    padding: 65px 0 35px;
+}
+
+.page-intro .page-title {
+    margin: 18px 0;
+    font-size: 65px;
+}
+
+.page-intro p {
+    max-width: 680px;
+    color: #505779;
+    font-size: 17px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding-bottom: 65px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #B9A9D6;
+}
+
+.project-card h2 {
+    margin: 15px 0 10px;
+    color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.project-card p {
+    color: #505779;
+}
+
+.project-card a {
+    margin-top: auto;
+    padding-top: 18px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* 12. Education and leadership timeline */
+.timeline {
+    margin-bottom: 65px;
+    border-top: 1px solid #B9A9D6;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 25px;
+    padding: 20px 0;
+    border-bottom: 1px solid #B9A9D6;
+}
+
+.timeline-label {
+    color: #202B5B;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.timeline-item h3 {
+    color: #202B5B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.timeline-item p {
+    color: #505779;
+}
+
+/* 13. Contact page — Grid */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 70px;
+}
+
+.contact-box {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #B9A9D6;
+}
+
+.contact-row {
+    padding: 17px 0;
+    border-bottom: 1px solid #E5E4E2;
+}
+
+.contact-row small {
+    display: block;
+    color: #505779;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.contact-row a {
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.contact-box p {
+    color: #505779;
+}
+
+/* 14. Footer */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 0;
+    color: #505779;
+    font-size: 12px;
+}
+
+/* 15. Media queries — responsive design */
+@media (max-width: 760px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 78px;
+    }
+
+    .portrait-wrap {
+        width: 80%;
+    }
+
+    .portrait-frame {
+        height: 430px;
+    }
+
+    .link-grid,
+    .project-grid,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-band {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .page-intro .page-title {
+        font-size: 48px;
+    }
+
+    .role-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .profile-band h2 {
+        font-size: 38px;
+    }
+
+    .wrap {
+        width: 92%;
+    }
+}
